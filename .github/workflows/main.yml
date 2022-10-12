@@ -14,5 +14,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+      - name: Install Lilypond
+        run: |
+          set -e
+          apt-get -qy update
+          apt-get -qy install --no-install-recommends lilypond
       - name: Typeset document
         run: lualatex -shell-escape document.tex
