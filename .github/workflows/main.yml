@@ -1,0 +1,18 @@
+name: Typeset document
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+env:
+  DEBIAN_FRONTEND: noninteractive
+jobs:
+  typeset-document:
+    name: Typeset document
+    runs-on: ubuntu-latest
+    container:
+      image: texlive/texlive:latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Typeset document
+        run: lualatex -shell-escape document.tex
