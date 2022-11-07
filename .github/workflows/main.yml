@@ -10,14 +10,20 @@ jobs:
     name: Typeset document
     runs-on: ubuntu-latest
     container:
-      image: ubuntu:latest
+      image: texlive/texlive:latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Install Lilypond
         run: |
           set -e
-          wget https://lilypond.org/download/binaries/linux-64/lilypond-2.22.2-1.linux-64.sh
-          sh ./lilypond-2.22.2-1.linux-64.sh --batch
+          apt -y update
+          apt -y install curl bzip2
+          curl https://lilypond.org/download/binaries/linux-64/`curl https://lilypond.org/download/binaries/linux-64/ | grep -o 'lilypond[^>]*sh' | tail -1` > lilypond.sh
+          sh ./lilypond.sh --batch
       - name: Typeset score
-        run: lilypond document.ly
+        run: |
+          lilypond document.ly
+      - name: Typeset lyluatex test
+        run: |
+          lualatex -shell-escape document.tex
