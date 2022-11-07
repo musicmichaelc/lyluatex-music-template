@@ -9,13 +9,15 @@ jobs:
   typeset-document:
     name: Typeset document
     runs-on: ubuntu-latest
+    container:
+      image: ubuntu:latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Install Lilypond
         run: |
           set -e
-          sudo apt-get -qy update
-          sudo apt-get -qy install --no-install-recommends lilypond
+          apt-get -qy update
+          apt-get -qy install --no-install-recommends lilypond
       - name: Typeset score
         run: lilypond document.ly
