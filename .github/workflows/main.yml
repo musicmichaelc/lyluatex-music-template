@@ -17,7 +17,7 @@ jobs:
       - name: Install Lilypond
         run: |
           set -e
-          apt-get -qy update
-          apt-get -qy install --no-install-recommends lilypond
+          wget https://lilypond.org/download/binaries/linux-64/lilypond-2.22.2-1.linux-64.sh
+          sh ./lilypond-2.22.2-1.linux-64.sh --batch
       - name: Typeset score
         run: lilypond document.ly
