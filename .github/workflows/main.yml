@@ -19,5 +19,7 @@ jobs:
           set -e
           apt-get -qy update
           apt-get -qy install --no-install-recommends lilypond
-      - name: Typeset document
+      - name: Typeset score with Lilypond
+        run: lilypond document.ly
+      - name: Typeset score with LyLuatex
         run: lualatex -shell-escape document.tex
