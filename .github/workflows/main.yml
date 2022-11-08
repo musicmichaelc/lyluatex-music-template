@@ -19,9 +19,7 @@ jobs:
         run: |
           set -e
           apt -y update
-          apt -y install curl bzip2
-          curl https://lilypond.org/download/binaries/linux-64/`curl https://lilypond.org/download/binaries/linux-64/ | grep -o 'lilypond[^>]*sh' | tail -1` > lilypond.sh
-          sh ./lilypond.sh --batch
+          apt -y install --no-install-recommends lilypond
       - name: Typeset score
         run: |
           lilypond document.ly
