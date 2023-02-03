@@ -26,3 +26,8 @@ jobs:
       - name: Typeset lyluatex test
         run: |
           lualatex -shell-escape document.tex
+      - name: Upload pdfs as artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: pdf-files
+          path: *.pdf
