@@ -3,6 +3,9 @@ on:
   push:
   pull_request:
   workflow_dispatch:
+  workflow_run:
+    branches:
+      - main
 env:
   DEBIAN_FRONTEND: noninteractive
 jobs:
