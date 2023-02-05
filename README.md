@@ -50,3 +50,7 @@ etc. lorem ipsum.
 **Important:** The `\lily` command *does not* support blocks of LilyPond
 code with explicit `\score` blocks.  Such code must be included with the
 `lilypond` environment or as a separate file.
+
+## Legal
+
+This starter template is licensed under the BSD Zero Clause License (0BSD). However, the software being used therein, such as `lilypond`, `lyluatex`, etc. themselves are licensed under their respective licenses, e.g. the `lyluatex` package is licensed under the MIT license, whereas `lilypond` is licensed under GPL.
