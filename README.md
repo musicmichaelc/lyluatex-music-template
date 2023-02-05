@@ -7,6 +7,14 @@ _Template for projects that combine `LaTeX` and `lilypond` in one document using
 
 Pushing new commits to a repository created from this starter template will trigger a workflow which produces pdf-files as artifacts.
 
+## `latexmk` pre-configured for local builds
+
+Simply run the command `latexmk` in the root folder of this repository to build locally. If you change the name of `document.tex`, modify `.latexmkrc` accordingly, e.g. if the file to be compiled is `main-project.tex`, then
+
+```bash
+@default_files = ('main-project.tex');
+```
+
 ## Usage
 
 _For more detailed information about using `lyluatex`, consult the [readme file](https://github.com/jperon/lyluatex#usage) in the [lyluatex repo](https://github.com/jperon/lyluatex). The following is a little summary:_
