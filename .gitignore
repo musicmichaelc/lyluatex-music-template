@@ -1,6 +1,9 @@
 *.svg
 *.pdf
 
+# Exclude temporary lilypond dir:
+tmp-ly/
+
 ## The following template is copied from: 
 ## https://raw.githubusercontent.com/github/gitignore/main/TeX.gitignore
  
