@@ -20,9 +20,9 @@ jobs:
           set -e
           apt -y update
           apt -y install --no-install-recommends lilypond
-      - name: Typeset lyluatex test
+      - name: Typeset document(s)
         run: |
-          lualatex -shell-escape document.tex
+          latexmk
       - name: Upload pdfs as artifacts
         uses: actions/upload-artifact@v3
         with:
