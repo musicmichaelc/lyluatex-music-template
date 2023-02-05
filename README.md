@@ -5,7 +5,7 @@ _Template for projects that combine `LaTeX` and `lilypond` in one document using
 
 ## Github workflow pre-configured
 
-Pushing new commits to a repository created from this starter template, will trigger a workflow which produces pdf-files as artifacts.
+Pushing new commits to a repository created from this starter template will trigger a workflow which produces pdf-files as artifacts.
 
 ## Usage
 
@@ -41,7 +41,10 @@ placing the following command before your first include statement:
 One can use `\lily` or `\lilypond`&mdash;both seem to have the same effect:
 
 ```TeX
-Some text here... Lorem ipsum etc. and the motive that reads \lily[staffsize=12]{c' d' g'} returns again in the recapitulation in a new form, etc. etc. lorem ipsum.
+Some text here... Lorem ipsum etc. and the motive 
+that reads \lily[staffsize=12]{c' d' g'} returns 
+again in the recapitulation in a new form, etc. 
+etc. lorem ipsum.
 ```
 
 **Important:** The `\lily` command *does not* support blocks of LilyPond
