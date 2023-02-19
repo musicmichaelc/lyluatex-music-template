@@ -5,41 +5,35 @@
 
 
 \title{LaTeX/lyluatex starter template}
-
 \author{Lorem Ipsum}
-
 \date{\today}
 
+
+
 \begin{document}
-\maketitle
+  \maketitle
 
-\begin{abstract}
-  Template for projects that combine \LaTeX and \verb|lilypond| in one document using the \verb|lyluatex| package.
-\end{abstract}
+  \begin{abstract}
+    Template for projects that combine \LaTeX and \verb|lilypond| in one document using the \verb|lyluatex| package.
+  \end{abstract}
 
-\section{Usage}
-\subsection{Inlining very short snippets}
+  \section{Usage}
+    \subsection{Inlining very short snippets}
+      This is accomplished as follows using the \verb|\lily| command:
 
-This is accomplished as follows using the \verb|\lily| command:
+      Some text here... Lorem ipsum and the motive that reads \lily[staffsize=9]{c' d' g'} returns again in the recapitulation in a new form, etc. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis ipsum corrupti nostrum iure ipsam, unde eveniet temporibus eaque distinctio porro, accusamus, cum officia! Numquam\dots
 
-Some text here... Lorem ipsum and the motive that reads \lily[staffsize=9]{c' d' g'} returns again in the recapitulation in a new form, etc. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis ipsum corrupti nostrum iure ipsam, unde eveniet temporibus eaque distinctio porro, accusamus, cum officia! Numquam\dots
+    \subsection{Including music snippets via the lilypond environment}
+      This is how:
+      \vspace*{1em}
 
+      \begin{center}
+        \begin{lilypond}
+          \relative c' { c d e f g a b c }
+        \end{lilypond}
+      \end{center}
+    \subsection{Including lilypond files}  
+      Include a complete piece or section thereof:
 
-\subsection{Including music snippets via the lilypond environment}
-
-This is how:
-\vspace*{1em}
-
-\begin{center}
-  \begin{lilypond}
-    \relative c' { c d e f g a b c }
-  \end{lilypond}
-\end{center}
-
-\subsection{Including lilypond files}  
-
-Include a complete piece or section thereof:
-
-\lilypondfile[staffsize=18]{ly/Chop-28-20.ly}
-
+      \lilypondfile[staffsize=18, insert=fullpage]{ly/Chop-28-20.ly}
 \end{document}
