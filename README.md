@@ -19,7 +19,9 @@ Simply run the command `latexmk` in the root folder of this repository to build 
 
 ## Usage
 
-_For more detailed information about using `lyluatex`, consult the [readme file](https://github.com/jperon/lyluatex#usage) in the [lyluatex repo](https://github.com/jperon/lyluatex). The following is a little summary:_
+_For more detailed information about using `lyluatex`, consult the [readme file](https://github.com/jperon/lyluatex#usage) in the [lyluatex repo](https://github.com/jperon/lyluatex) or **(even better and more detailed)** [the following pdf-documenation](https://ctan.math.utah.edu/ctan/tex-archive/support/lyluatex/lyluatex.pdf)._    
+
+_The following is a little summary:_
 
 ### Including lilypond `.ly` files
 
@@ -34,6 +36,9 @@ placing the following command before your first include statement:
 ```TeX
 \setluaoption{ly}{staffsize}{24}
 ```
+
+Insertion mode can be controlled with the `insert` option, whose valid values are `systems` (default),
+`fullpage`, `inline`, and `bare-inline`. For more info on these options, please consult the [pdf-documenation](https://ctan.math.utah.edu/ctan/tex-archive/support/lyluatex/lyluatex.pdf) on page 8 and following.
 
 ### Including short snippets directly 
 
